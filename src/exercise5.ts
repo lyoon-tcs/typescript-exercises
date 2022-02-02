@@ -69,13 +69,26 @@ export function logPerson(person: Person) {
   console.log(` - ${person.name}, ${person.age}, ${additionalInformation}`);
 }
 
-export function filterUsers(persons: Person[], criteria: User): User[] {
-  return persons.filter(isUser).filter((user) => {
-    const criteriaKeys = Object.keys(criteria) as (keyof User)[];
-    return criteriaKeys.every((fieldName) => {
-      return user[fieldName] === criteria[fieldName];
-    });
+// export function filterUsers(persons: Person[], criteria: User): User[] {
+//   return persons.filter(isUser).filter((user) => {
+//     const criteriaKeys = Object.keys(criteria) as (keyof User)[];
+//     return criteriaKeys.every((fieldName) => {
+//       return user[fieldName] === criteria[fieldName];
+//     });
+//   });
+// }
+
+export function filterUsers(
+  persons: Person[],
+  criteria: Partial<Omit<User, 'type'>>
+) {
+  const users = persons.filter(isUser);
+  const final = users.filter((user) => {
+    return user.age === criteria.age;
   });
+  // what in the world is going on here???
+  // want to return an array of objects with matching CRITERIA and USER
+  return final;
 }
 
 console.log('Users of age 23:');
