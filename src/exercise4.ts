@@ -30,12 +30,11 @@ export const persons: Person[] = [
  * Here, person: Person can be either interface User | Admin.
  * person is Admin makes it so it sets it directly to Admin
  */
-
 export function isAdmin(person: Person): person is Admin {
   return person.type === 'admin';
 }
 
-export function isUser(person: Person) {
+export function isUser(person: Person): person is User {
   return person.type === 'user';
 }
 
