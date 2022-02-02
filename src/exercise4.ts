@@ -26,6 +26,11 @@ export const persons: Person[] = [
   { type: 'admin', name: 'Bruce Willis', age: 64, role: 'World saver' }
 ];
 
+/*
+ * Here, person: Person can be either interface User | Admin.
+ * person is Admin makes it so it sets it directly to Admin
+ */
+
 export function isAdmin(person: Person): person is Admin {
   return person.type === 'admin';
 }
@@ -36,6 +41,7 @@ export function isUser(person: Person) {
 
 export function logPerson(person: Person): void {
   let additionalInformation = '';
+  // runs isAdmin => (checks if it has all props on interface Admin), so if true, run code
   if (isAdmin(person)) {
     additionalInformation = person.role;
   }
