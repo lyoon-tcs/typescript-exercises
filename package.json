@@ -7,7 +7,7 @@
     "lint": "eslint .",
     "lint:fix": "npx eslint --fix",
     "build": "tsc --noEmitOnError",
-    "start": "node ./dist/exercise1.js"
+    "start": "node ./dist/exercise2.js"
   },
   "repository": {
     "type": "git",
