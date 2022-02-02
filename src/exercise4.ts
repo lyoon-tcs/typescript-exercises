@@ -35,7 +35,7 @@ export function isUser(person: Person) {
 }
 
 export function logPerson(person: Person): void {
-  let additionalInformation: string = '';
+  let additionalInformation = '';
   if (isAdmin(person)) {
     additionalInformation = person.role;
   }
