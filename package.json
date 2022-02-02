@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/lyoon-tcs/typescript-exercises/issues"
   },
-  "homepage": "https://github.com/lyoon-tcs/typescript-exercises#readme"
+  "homepage": "https://github.com/lyoon-tcs/typescript-exercises#readme",
+  "devDependencies": {
+    "prettier": "^2.5.1"
+  }
 }
