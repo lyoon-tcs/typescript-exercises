@@ -35,8 +35,18 @@ export const persons: Person[] = [
   }
 ];
 
+/*
+ * In this example, I'm actually accessing role (in Admin) or occupation (in User)
+ * so run an if check (if role in property exists, else...)
+ */
+
 export function logPerson(person: Person): void {
   let additionalInformation: string;
+  /*
+   * so for typescript, if you want to check if role property exists,
+   * instead of person.role, do "role" in person (just syntax I'll have to learn)
+   * *NOTE* can be confused with in loop, or thinking you can do a dot notation check (person.role). doesn't work
+   */
   if ('role' in person) {
     additionalInformation = person.role;
   } else {
