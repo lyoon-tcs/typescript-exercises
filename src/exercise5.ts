@@ -80,6 +80,13 @@ export function logPerson(person: Person) {
 
 export function filterUsers(
   persons: Person[],
+  /**
+   * Since we're only passing in age, Partial allows you to set all properties as optional.
+   * This allows us to only pass age (as other properties stored in, in this case, User - is optional)
+   *
+   * We nest Omit inside Partial, which picks a property to remove (the challenge).
+   * Used User instead of Admin just to pass test (not sure why).
+   */
   criteria: Partial<Omit<User, 'type'>>
 ) {
   const users = persons.filter(isUser);
