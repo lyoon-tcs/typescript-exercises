@@ -34,6 +34,10 @@ export function isAdmin(person: Person): person is Admin {
   return person.type === 'admin';
 }
 
+/*
+ * Here, person: Person can be either interface User | Admin.
+ * person is User makes it so it sets it directly to User
+ */
 export function isUser(person: Person): person is User {
   return person.type === 'user';
 }
@@ -44,6 +48,7 @@ export function logPerson(person: Person): void {
   if (isAdmin(person)) {
     additionalInformation = person.role;
   }
+  // runs isAUser => (checks if it has all props on interface User), so if true, run code
   if (isUser(person)) {
     additionalInformation = person.occupation;
   }
