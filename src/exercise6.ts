@@ -37,4 +37,29 @@ export function logPerson(person: Person): void {
   );
 }
 
-persons.forEach(logPerson);
+// export function filterPersons(
+//   persons: Person[],
+//   personType: string,
+//   criteria: unknown
+// ): unknown[] {
+//   return persons
+//     .filter((person) => person.type === personType)
+//     .filter((person) => {
+//       let criteriaKeys = Object.keys(criteria) as (keyof Person)[];
+//       return criteriaKeys.every((fieldName) => {
+//         return person[fieldName] === criteria[fieldName];
+//       });
+//     });
+// }
+
+export function filterPersons(
+  persons: Person[],
+  personType: string,
+  criteria: Partial<Omit<Person, 'type'>>
+) {
+  console.log(persons);
+  console.log(personType);
+  console.log(criteria);
+}
+
+export const usersOfAge23 = filterPersons(persons, 'user', { age: 23 });
