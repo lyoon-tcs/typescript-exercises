@@ -34,7 +34,7 @@ export function isUser(person: Person) {
   return person.type === 'user';
 }
 
-export function logPerson(person: Person) {
+export function logPerson(person: Person): void {
   let additionalInformation: string = '';
   if (isAdmin(person)) {
     additionalInformation = person.role;
