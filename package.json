@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/lyoon-tcs/typescript-exercises#readme",
   "devDependencies": {
+    "eslint": "^8.8.0",
     "prettier": "^2.5.1"
   }
 }
